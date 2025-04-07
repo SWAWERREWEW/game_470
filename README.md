@@ -22,7 +22,6 @@
     ```
 
 Установите необходимые библиотеки:
-
     ```bash
     pip install -r requirements.txt
     ```
