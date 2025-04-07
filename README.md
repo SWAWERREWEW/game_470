@@ -1,5 +1,5 @@
 ## :heavy_check_mark: Это Python файл с игрой 470.
-![example](https://img.shields.io/badge/Python_Pygame-darkgreen)
+![example](https://img.shields.io/badge/Python-Pygame-darkgreen)
 
 В ней вы играете за синего квадратика и вам нужно собрать все 470 очков, которые можно получить собирая жёлтые квадратики, которые дают 10 очков.
 
