@@ -5,7 +5,7 @@ from content_470 import *
 
 # Класс для задания характеристик синего квадратика или игрока
 class BlueSquere(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self): # Конструктор класса
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface([SIZE_BLUE_SQUERE, SIZE_BLUE_SQUERE]) # задание размером синему квадратику
         self.image.fill(BLUE) # заполняем квадратик синим цветом
@@ -38,7 +38,7 @@ class BlueSquere(pygame.sprite.Sprite):
         if self.rect.bottom > HEIGHT:
             self.rect.bottom = HEIGHT
 
-
+# Класс жёлтого квадратика
 class YellowSquere(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -57,17 +57,17 @@ class RedSquere(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = randrange(0, WIDTH - SIZE_RED_SQUERE)
         self.rect.y = randrange(0, HEIGHT - SIZE_RED_SQUERE)
-        self.x_speed = choice([-2, 2])
-        self.y_speed = choice([-2, 2])
+        self.x = choice([-2, 2]) # задаётся перемещение в случайную сторону
+        self.y = choice([-2, 2])
 
 
     def update(self):
-        self.rect.x += self.x_speed
-        self.rect.y += self.y_speed
+        self.rect.x += self.x
+        self.rect.y += self.y
         if self.rect.left < 0 or self.rect.right > WIDTH:
-            self.x_speed = -self.x_speed
+            self.x = -self.x
         if self.rect.top < 0 or self.rect.bottom > HEIGHT:
-            self.y_speed = -self.y_speed
+            self.y = -self.y
 
 
 def draw_text(surface, text, size, x, y, color=WHITE):
