@@ -61,9 +61,11 @@ class RedSquere(pygame.sprite.Sprite):
         self.y = choice([-2, 2])
 
 
-    def update(self):
+    def update(self): # За счёт постоянного обновления координат они увеличиваются постоянно каждую секунду
         self.rect.x += self.x
         self.rect.y += self.y
+        # А когда красный квадратик касается конца экрана его координаты меняют знак и засчёт этого
+        # квадратик двигается в противоположном направлении.
         if self.rect.left < 0 or self.rect.right > WIDTH:
             self.x = -self.x
         if self.rect.top < 0 or self.rect.bottom > HEIGHT:
